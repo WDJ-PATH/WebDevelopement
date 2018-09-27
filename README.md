@@ -1,4 +1,4 @@
-LOGIN FORMS AND LINKING IT TO A DATABASE
+LEARNING HTML
 ===
 
-Learning Html.
+Login forms and linking it into a database.
