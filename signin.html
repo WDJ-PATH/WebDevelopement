@@ -68,7 +68,13 @@
 <form method="get|post" onsubmit= "return Validate(this);" target="_top">
 
       <div class="auth-form-body mt-3">
-        
+        <script type="text/javascript">
+	function Validate()
+	{
+		if (document.getElementById('login_field').value == "") {alert('username is required.'); return false;}
+		if (document.getElementById('password').value == "") {alert('password is required.'); return false;}
+	}
+	</script>
         <label for="login_field">
           Username or email address
         </label>
@@ -78,14 +84,8 @@
           Password <a class="label-link" href="/password_reset">Forgot password?</a>
         </label>
         <input type="password" name="password" id="password" class="form-control form-control input-block" tabindex="2">
-        <input type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…" onclick="if( document.getElementById('password').value == 'hello') window.location.replace('https://sites.google.com/view/searchreport/home'); else alert('Wrong password'); return false;" />
-	<script type="text/javascript">
-	function Validate(frm)
-	{
-		if (frm.login_field.value == "") {alert('username is required.');frm.login_field.focus();return false;}
-		if (frm.password.value == "") {alert('password is required.');frm.password.focus();return false;}
-	}
-	</script>
+        <input type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…" onclick="if(Validate() == false) return false; if( document.getElementById('password').value == 'hello') window.location.replace('https://sites.google.com/view/searchreport/home'); else alert('Wrong password'); return false;" />
+	
       </div>
 </form>
 
