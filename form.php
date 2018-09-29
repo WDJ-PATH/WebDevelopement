@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['message']='';
 
-$mysqli= new mysqli('127.0.0.1','root','newhorizon','accounts');
+$mysqli= new mysqli('localhost','root','newhorizon','accounts');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if($_POST['password']== $_POST['confirmpassword']){
