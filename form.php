@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['message']='';
 
-$mysql= new mysqli('localhost','root','newhorizon','accounts');
+$mysqli= new mysqli('127.0.0.1','root','newhorizon','accounts');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if($_POST['password']== $_POST['confirmpassword']){
@@ -12,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $_SESSION['username']=$username;
     $sql= "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";
-    $check=mysqli;
-    if($check->query($sql) == true){
+    if($mysqli->query($sql) === true){
       $_SESSION['message']= "Registration Successful! New Account Added with Username : $username";
       header("location: signin.php");
     }
