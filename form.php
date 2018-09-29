@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $_SESSION['message']='';
@@ -13,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $_SESSION['username']=$username;
     $sql= "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";
-    if(mysqli->query($sql)== true){
-      $_SESSION['message']= "Registration Successful! New Account Added with Username : $username.";
-      header("location:file:///home/aswinrprasad/Documents/Git%20Repos/HTMLTEST/signin.html");  
+    $check=mysqli;
+    if($check->query($sql) == true){
+      $_SESSION['message']= "Registration Successful! New Account Added with Username : $username";
+      header("location: signin.php");
     }
     else{
       $_SESSION['message']= "Error! Couldn't Register Account.";
@@ -33,12 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   <div class="module">
     <h1>Create an account</h1>
     <form class="form" action="form.php" method="post" enctype="multipart/form-data" autocomplete="off">
-      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+      <div class="alert alert-error"><?=$_SESSION['message'] ?></div>
       <input type="text" placeholder="User Name" name="username" required />
       <input type="email" placeholder="Email" name="email" required />
       <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
       <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
-      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" onclick="window.location.replace('file:///home/aswinrprasad/Documents/Git%20Repos/HTMLTEST/signin.html')" />
     </form>
   </div>
 </div>
+
+
+
