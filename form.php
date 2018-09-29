@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       <input type="email" placeholder="Email" name="email" required />
       <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
       <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
-      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" onclick="window.location.replace('file:///home/aswinrprasad/Documents/Git%20Repos/HTMLTEST/signin.html')" />
+      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
     </form>
   </div>
 </div>
