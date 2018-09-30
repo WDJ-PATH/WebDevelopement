@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql= "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";
     if($mysqli->query($sql) === true){
       $_SESSION['message']= "Registration Successful! New Account Added with Username : $username";
-      header("location: signin.php");
+      header("location: sign.php");
     }
     else{
       $_SESSION['message']= "Error! Couldn't Register Account.";
