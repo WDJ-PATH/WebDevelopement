@@ -82,13 +82,8 @@ outline:0;
     <script>
     function yourFunction(){
 
-    var urlLink = "https://cve.circl.lu/api/search/";
-    var action_src = document.getElementsByName("Vendor")[0].value;
-    urlLink = urlLink +action_src+"/";
-    var action_src = document.getElementsByName("Product")[0].value;
-    urlLink = urlLink + action_src;
+    var urlLink = "http://localhost/result.php";
     var your_form = document.getElementById("your_form");
-
     your_form.action = urlLink;
 }
     </script>
@@ -97,9 +92,9 @@ outline:0;
     <h1><center>TAILORED CVE REPORT</center></h1>
     <marquee><h2>Enter product to search for the report</h2></marquee>
 <!-- search form 1 -->
-<form id="your_form" class="searchbox_1" action="search.php" onsubmit="yourFunction(); ">
-<input type="vendor" class="search_1" name="Vendor" placeholder="Vendor" />
-<input type="product" class="search_1" name="Product" placeholder="Product" />
+<form id="your_form" method="POST" class="searchbox_1" action="result.php" onsubmit="yourFunction(); ">
+<input type="vendor" class="search_1" name="Vendor" placeholder="Vendor" required />
+<input type="product" class="search_1" name="Product" placeholder="Product" required />
 <button type="submit" class="submit_1" value="search" > Search</button>
 </form>
 </body>
