@@ -12,10 +12,10 @@ $data = file_get_contents($url); // put the contents of the file into a variable
 $characters = json_decode($data); // decode the JSON feed
 
 ?>
-
-<p1>VENDOR : </p1>
+</br>
+<p1><b>VENDOR : </b></p1>
 <?php echo $v; ?></br> 
-<p1>PRODUCT : </p1>
+<p1><b>PRODUCT : </b></p1>
 <?php echo $p; ?></br></br></br></br>
 
 <table>
