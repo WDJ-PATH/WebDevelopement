@@ -83,12 +83,20 @@ outline:0;
     function yourFunction(){
 
     var urlLink = "http://localhost/result.php";
+
+    var urlLink1 = "https://cve.circl.lu/api/search/";
+    var action_src = document.getElementsByName("Vendor")[0].value;
+    urlLink1 = urlLink1 +action_src+"/";
+    var action_src = document.getElementsByName("Product")[0].value;
+    urlLink1 = urlLink1 + action_src;
+    
     var your_form = document.getElementById("your_form");
+
     your_form.action = urlLink;
 }
     </script>
 </head>
-<body background="img/bluebg.jpg">
+<body style="background-image:url('img/bluebg1.jpg'); height:100%;background-position: center ; background-size:all;background-repeat:no-repeat;">
     <h1><center>TAILORED CVE REPORT</center></h1>
     <marquee><h2>Enter product to search for the report</h2></marquee>
 <!-- search form 1 -->

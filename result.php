@@ -1,5 +1,5 @@
 <html>
-<body background="img/bluebg.jpg">
+<body style="background-image:url('img/bluebg1.jpg'); height:100%;background-position: center ; background-size:all;background-repeat:repeat;">
 
 <?php
 $base="https://cve.circl.lu/api/search/"; // path to your JSON file
