@@ -1,5 +1,5 @@
 var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('nvdcve-1.0-2002.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync('nvdcve-1.0-2010.json', 'utf8'));
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
